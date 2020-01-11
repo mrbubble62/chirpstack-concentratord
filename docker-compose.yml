@@ -1,9 +1,16 @@
 version: "2"
 services:
-  chirpstack-concentratord:
+  chirpstack-concentratord-stretch:
     build:
       context: .
       dockerfile: Dockerfile-devel
+    volumes:
+      - ./:/chirpstack-concentratord
+
+  chirpstack-concentratord-buster:
+    build:
+      context: .
+      dockerfile: Dockerfile-devel-test
     volumes:
       - ./:/chirpstack-concentratord
 
