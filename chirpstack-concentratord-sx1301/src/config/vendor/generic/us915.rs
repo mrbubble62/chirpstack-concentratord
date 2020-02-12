@@ -143,7 +143,7 @@ pub fn new(gps: bool) -> Configuration {
             },
         ],
         gps_tty_path: match gps {
-            true => "/dev/ttyAMA0".to_string(),
+            true => "/dev/ttyS0".to_string(),
             false => "".to_string(),
         },
         spidev_path: "/dev/spidev0.0".to_string(),
