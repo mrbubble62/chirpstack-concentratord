@@ -35,7 +35,7 @@ pub fn gps_loop(gps_tty_path: &str) {
 
     debug!("Starting GPS loop");
 
-    let gps_file = gps::enable(gps_tty_path, gps::GPSFamily::UBX7, 0)
+    let gps_file = gps::enable(gps_tty_path, gps::GPSFamily::NMEA, 0)
         .expect("could not open gps tty path for gps sync");
     let mut gps_reader = BufReader::new(gps_file);
 
