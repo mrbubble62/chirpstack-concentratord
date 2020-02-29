@@ -11,6 +11,7 @@ use super::{mutex, wrapper};
 #[derive(Debug, PartialEq)]
 pub enum GPSFamily {
     UBX7,
+    NMEA,
 }
 
 /// GPS coordinates.
@@ -103,6 +104,7 @@ pub fn enable(tty_path: &str, gps_family: GPSFamily, target_brate: u32) -> Resul
     let mut fd: i32 = 0;
     let gps_family = match gps_family {
         GPSFamily::UBX7 => CString::new("ubx7").unwrap(),
+        GPSFamily::NMEA => CString::new("nmea").unwrap(),
     };
     let tty_path = CString::new(tty_path).unwrap();
 
